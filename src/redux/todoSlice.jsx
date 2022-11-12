@@ -10,7 +10,7 @@ const todoSlice = createSlice({
                 title: action.payload.title,
                 completed: false,
             };
-            state.push(newTodo)
+            state.unshift(newTodo)
         },
         toggleComplete: (state, action) => {
             const index = state.findIndex(

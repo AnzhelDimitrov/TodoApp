@@ -13,19 +13,19 @@ const TodoItem = ({ id, title, completed }) => {
 		dispatch(deleteTodo({ id: id }))
 	}
 	return (
-		<li className={`list-group-item ${completed && 'list-group-item-success'}`}>
+		<li className={`list-group-item`} style={{backgroundColor: completed ? '#00ff3e59' : 'inherit'}}>
 			<div className='d-flex justify-content-between'>
-				<span className='d-flex align-items-center overflow-auto'>
+				<span className='todo-text d-flex align-items-center'>
 					<input 
 						type='checkbox' 
-						className='mr-3' 
+						className='mx-2' 
 						checked={completed}
 						onChange={handleCompleteClick}
 					>
 					</input>
 					{title}
 				</span>
-				<button onClick={handleDeleteClick} className='btn btn-danger'>Delete</button>
+				<button onClick={handleDeleteClick} className='btn btn-danger mx-2'>Delete</button>
 			</div>
 		</li>
 	);
